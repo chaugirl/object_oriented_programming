@@ -37,6 +37,18 @@ class Rover
 	#the new direction will be determined with either turning L or R
 	def turn_left
 		if @direction == "N"
+			@direction = "W"
+		elsif @direction == "E"
+			@direction = "N"
+		elsif @direction == "S"
+			@direction = "E"
+		elsif @direction == "W"
+			@direction = "S"
+		end	
+	end
+
+	def turn_right
+		if @direction == "N"
 			@direction = "E"
 		elsif @direction == "E"
 			@direction = "S"
