@@ -8,13 +8,18 @@ class Rover
 
 	#should accept an instruction and decide whether to tell the rover to move or turn
 	def read_instruction(instruction)
-		if instruction == "M"
+
+		instruction_array = instruction.chars.to_a
+
+		instruction_array.each { |instr| 
+		if instr == "M"
 			move
-		elsif instruction == "L"
+		elsif instr == "L"
 			turn_left
-		elsif instruction == "R"
+		elsif instr == "R"
 			turn_right
 		end
+		}
 	end
 
 	#affects the position of the rover
@@ -61,7 +66,12 @@ class Rover
 
 end
 
-rover = Rover.new(0, 0, "S")
-puts "Rover's current position is #{rover.x}, #{rover.y}, facing #{rover.direction}"
-rover.read_instruction("L")
-puts "Rover's current position is #{rover.x}, #{rover.y}, facing #{rover.direction}"
+rover1 = Rover.new(1, 2, "N")
+puts "Rover1's current position is #{rover1.x}, #{rover1.y}, facing #{rover1.direction}"
+rover1.read_instruction("LMLMLMLMM")
+puts "Rover1's current position is #{rover1.x}, #{rover1.y}, facing #{rover1.direction}"
+
+rover2 = Rover.new(3, 3, "E")
+puts "Rover2's current position is #{rover2.x}, #{rover2.y}, facing #{rover2.direction}"
+rover2.read_instruction("MMRMMRMRRM")
+puts "Rover2's current position is #{rover2.x}, #{rover2.y}, facing #{rover2.direction}"
