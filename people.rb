@@ -1,3 +1,9 @@
+class Person
+	def initialize(name)
+		@name = name
+	end
+end
+
 class Student
 	def learn
 		puts "I get it"
@@ -10,3 +16,5 @@ class Instructor
 	end
 	
 end
+
+
