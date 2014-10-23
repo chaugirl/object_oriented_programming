@@ -32,9 +32,24 @@ class Rover
 		end
 	end	
 
+	#affects the direction of the rover
+	#depending on the current direction of the rover, 
+	#the new direction will be determined with either turning L or R
+	def turn_left
+		if @direction == "N"
+			@direction = "E"
+		elsif @direction == "E"
+			@direction = "S"
+		elsif @direction == "S"
+			@direction = "W"
+		elsif @direction == "W"
+			@direction = "N"
+		end
+	end
+
 end
 
 rover = Rover.new(0, 0, "S")
 puts "Rover's current position is #{rover.x}, #{rover.y}, facing #{rover.direction}"
-rover.read_instruction("M")
+rover.read_instruction("L")
 puts "Rover's current position is #{rover.x}, #{rover.y}, facing #{rover.direction}"
