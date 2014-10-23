@@ -20,5 +20,6 @@ class Instructor < Person
 end
 
 Instructor.new("Chris").greeting
+Student.new("Christina").greeting
 
 
